@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color= danger>
+    <ion-title>Email</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit) = "SendMail(form.value)" #form = "ngForm">
+
+      <samp>From *</samp>
+        <input class="form-control" type="email" required name="sender_Email" [(ngModel)] = "SaderEmail"placeholder="From"><br>
+
+        <samp>To *</samp>
+        <input class="form-control" required type="email" name="receiver_Email" [(ngModel)] = "ReceiverEmail" placeholder="To"><br>
+
+        <!-- <samp>cc</samp> -->
+        <!-- <input class="form-control" type="email" name="cc" ngModel placeholder="cc"><br> -->
+
+        <samp>Your Message</samp>
+        <textarea required rows="7" class="form-control" name="Mail" ngModel placeholder="Your Message ..."></textarea><br>
+
+        <button style="width: 100%" class="btn btn-danger" [disabled] = "!form.valid">Send 
+            <ion-icon name= "send"></ion-icon>
+        </button>
+    </form>
+</ion-content>

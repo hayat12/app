@@ -1,19 +1,44 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- bootstarp css -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js"></script>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <ion-content class="sidecontent">
+<br><br>
+        <div menuClose class="myprofilebackgrand">
+              <div class="uploadImage">
+                <div class="profileImage">
+                  <img *ngIf = "imageName" (click)="UplaodAlert()" [src]='SalePersonImage'/>
+                </div>
+                <ion-item>
+                    <strong>{{SalesPersonName}}</strong>
+                    <br><br>
+                        <div (click)= "stopTracking()" class="startgps" *ngIf = "!stoptbtn">
+                            <i id="gpsbtn" class="fa fa-toggle-on" aria-hidden="true"></i>
+                            <i id="refbtn" class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                        </div>
+                        <div (click)= "startTracking()" class="stopgps" *ngIf = "!startbtn">
+                            <i  id="gpsbtn" class="fa fa-toggle-off" aria-hidden="true"></i>
+                            <i id="refbtn" class="fa fa-refresh" aria-hidden="true"></i>
+                        </div>
+                </ion-item>
+              </div>
+            </div>
+                  
+          <button  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+              <samp>
+                  <i class="fa fa-{{p.title}} fa-2x"></i> {{p.names}}
+              </samp> 
+          </button>
+          <button ion-item (click)="LogoutMe()">
+                <samp>
+                    <i class="fa fa-sign-out fa-2x"></i> Log Out
+                </samp> 
+        </button>   
+
   </ion-content>
-
 </ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>
 
-<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "NizTheWiz Sale App",
+  "short_name": "SaleApp",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

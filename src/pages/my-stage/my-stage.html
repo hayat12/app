@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color = danger>
+    <ion-title>{{Title}}</ion-title>
+
+    <ion-buttons end>
+        <button (click)="ManageStage()" ion-button icon-only color="royal">
+          <i style="color:white; margin-right: 10px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </button>
+      </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <table class="table">
+    <tbody>
+        <tr>
+          <td>Opportunity Stage</td>
+          <td>{{opportunity_stage}}</td>
+        </tr>
+        <tr>
+          <td>Problity of closing Sale </td>
+          <td>{{probality_close_sale}}</td>
+        </tr>
+        <tr>
+          <td>Number of delivery</td>
+          <td>{{NumberOfDelivery}}</td>
+        </tr>
+        <tr>
+          <td>Probality of closing sale</td>
+          <td>{{expected_close_date}}</td>
+        </tr> 
+    </tbody>
+  </table>
+<div *ngIf = "losestatus">
+  <div class="Lose" *ngFor = "let lose of CloseOppoResponse">
+    <div class="status">{{lose.status}}</div><br>
+    <div class="commemt">
+      {{lose.comment}} <br>
+      <a>{{lose.currenttime|date}}</a>
+      <br>
+    </div>
+  </div>
+</div>
+</ion-content>

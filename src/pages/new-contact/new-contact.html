@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar color = danger>
+		<ion-title>
+			New Contacts
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+			<form (ngSubmit) ="AddNewContact(f.value)" #f = "ngForm">
+					<h6> Name </h6>
+		  			<input type="text" name="Name" class="form-control" placeholder="Name" required [(ngModel)]="Name">
+
+		  			<h6>Account Name </h6>
+		  			<!-- <input type="text" name="AccountName" class="form-control" placeholder="Account Name" required [(ngModel)]="AccountName"> -->
+					<select name="AccountID" class="form-control" [(ngModel)]="AccountID">
+						<option *ngFor = "let account of ResponsData" [value]="account.account_id">{{account.accountName}}</option>
+					</select>
+		  			<h6>Title </h6>
+		  			<input type="text" name="Title" class="form-control" placeholder="Title" required [(ngModel)]="Title">
+
+		  			<h6>Department </h6>
+		  			<input type="text" name="Department" class="form-control" placeholder="Department" required [(ngModel)]="Department">
+
+					<h6>Email </h6>
+		  			<input type="email" name="Email" class="form-control" placeholder="Email" required [(ngModel)]="Email">
+
+		  			<h6>Phone No </h6>
+		  			<input type="text" name="PhoneNo" class="form-control" placeholder="Phone No" [(ngModel)]="PhoneNo">
+
+		  			<h6>Mobile No </h6>
+		  			<input type="text" name="MobileNo" class="form-control" placeholder="Mobile No" required [(ngModel)]="MobileNo">
+
+		  			<h6>Address 		<a id="mapPin" (click) = "SetMyLocation()"> <ion-icon ios="ios-pin" md="md-pin"></ion-icon> </a> </h6>
+		  			<input type="text" name="Address" class="form-control" placeholder="Address" required [(ngModel)]="Address"> <!-- #search !-->
+					<br>
+		  			<button ion-button full type="submit" class="btn btn-danger" [disabled] = "!f.valid"> {{btnTitle}} </button>
+			  </form>
+</ion-content>
+
+
+
+
+

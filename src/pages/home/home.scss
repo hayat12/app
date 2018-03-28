@@ -1,3 +1,68 @@
 page-home {
+	// .content{
+	// 	background-color:  rgb(207, 206, 205);
+	// }
+	.tophome{
+		padding: 3% 4% 3% 4%;
+		margin: 5px;
+		background-color: rgba(238, 64, 64, 0.97);
+		box-shadow: 0px 0px 0.1px 0px;
+		.tb1{
+			display: inline;
+			margin-right: 18%;
+		}
+		.tb2{
+			display: inline;
+			margin-right: 12%;
+		}
+		.tb3{
+			display: inline;
+			margin-right: 12%;
+		}
+	}
+ .Upcoming{
+	 padding: 5px 5px 5px 5px;
+	 margin: 5px;
+	 background-color: white;
+	 border-radius: 3px;
+	 box-shadow: 0px 0px 0.1px 0px;
+ 	.upc_title{
+		background-color:  rgba(224, 217, 217, 0.84);
+		padding: 5px;
+		// border-radius: 5px;
+		color: black;
+		.upc_img{
+			color: #1972BB;
+			font-size: 22px;
+			display: inline;
+		}
+		.eventType{
+			float: right;
+			font-size: 12px;
+			.eventTypeDay{
+				display: inline;
+				font-size: 12px;
+				color: white;
+			}
+		}
+	}
+  	.upc_sub{
+  		color: black;
+  	}
+	.upc_even{
+		color: darkgray;
+		font-size: 10px;
+		float: right;
+		margin: 3px;
+	}
+ 	.upc_dsc{
+ 		text-align: justify;
+ 		color: black;
+	 }
+	 .sub_content{
+		 margin: 5px;
+	 }
+ 	
+ }
 
 }

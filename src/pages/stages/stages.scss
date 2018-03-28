@@ -1,0 +1,51 @@
+page-stages {
+    #fabtn{
+        margin-right: 10px;
+        font-size: 18px;
+    }
+    .ManageMyTask{
+        margin-right: 2%;
+    }
+    .backbtn{
+        background-color: #f53d3d;
+        color: white;
+        display: block;
+    }
+    .backbtn span{
+        display: inline;
+        font-size: 16px;
+        margin-left: -8px;
+    }
+    .backbtn ion-icon{
+        margin-top: 10px;
+    }
+    .events{
+        width: 100%;
+        border: 1px solid lightgray;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .events div{
+        width: 100%;
+        padding: 5px;
+    }
+    .events span{
+        float: right;
+        text-align: right;
+    }
+    .footer .col{
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+        }
+        .col:active{
+            background-color: lightgray;
+        }
+
+#koos{
+    background-color: #f53d3d;
+    float: left;
+    size: 32px;
+}
+}

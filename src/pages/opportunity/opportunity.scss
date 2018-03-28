@@ -1,0 +1,70 @@
+page-opportunity {
+	// .content{
+	// 	background-color:  rgb(207, 206, 205);
+	// }
+	.oppoTop{
+		padding: 3%;
+		margin: 5px;
+		background-color:  rgba(224, 217, 217, 0.84);
+		box-shadow: 0.2px 0.2px 5px 0px;
+		border-radius: 5px;
+		.fa{
+			font-size: 18px;
+			color: black;
+		}
+	}
+	.oppolists{
+		margin: 5px;
+	}
+	.manageoppo{
+		padding: 3%;
+		margin: 5px;
+		background-color:  rgba(224, 217, 217, 0.84);
+		box-shadow: 0px 0px 0.1px 0px;
+	}
+	.oppoOpen{
+		padding: 3%;
+		margin: 5px;
+		background-color:  rgba(243, 237, 237, 0.84);
+		}
+	.oppoClose{
+		padding: 3%;
+		margin: 5px;
+		background-color:  rgba(243, 237, 237, 0.84);
+		}
+		.openList{
+			padding: 3%;
+			margin: 5px;
+			background-color:white;
+			// box-shadow: 0px 0px 0.1px 0px;
+			border-bottom: 1px solid lightgray;
+			a{
+				float: right;
+				margin-top: -10px;
+				font-size: 10px;
+			}
+		}
+		.closeList{
+			padding: 3%;
+			margin: 5px;
+			background-color:white;
+			border-bottom: 1px solid lightgray;
+			//box-shadow: 0px 0px 0.1px 0px;
+			a{
+				float: right;
+				margin-top: -10px;
+				font-size: 10px;
+			}
+		}
+	.opportunityprocess{
+		height: 5px;
+		width: 100%;
+		font-size: 6px;
+		display: inline;
+	}
+	.processbar{
+		background-color: red;
+		
+	}
+}
+

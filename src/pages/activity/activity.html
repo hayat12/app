@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-navbar color= danger>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Activity </ion-title>
+  </ion-navbar>
+</ion-header>
+
+  <ion-content class="content">
+        <div class="titOpenActivity">Open Activity</div>
+    <!--Dispaly event -->
+                      <div class="Upcoming" *ngFor = "let tdy of EventResponsData">
+                            <div class="upc_title">
+                                  <div class="upc_img">
+                                    <ion-icon name = "contact"></ion-icon>
+                                  </div>
+                                  <div class="eventType">Event(Open)
+                                  </div>
+                                  <strong> <small>{{tdy.opportunity_name}} </small> </strong> <small><a>({{tdy.accountName}})</a></small>
+                            </div>
+                      <div class="sub_content">
+                            <div class="upc_sub"><strong>{{tdy.subject}}</strong></div>
+                            <div class="upc_even">{{tdy.event_start |date}}</div>
+                              <div class="upc_dsc">{{tdy.event_disc}}</div>
+                      </div>
+                      
+                    </div>
+                <!-- Dispaly Task -->
+              <div class="Upcoming" *ngFor = "let task of Task_ResponsData">
+                        <div class="upc_title">
+                              <div class="upc_img">
+                                <ion-icon name = "contact"></ion-icon>
+                              </div>
+                              <div class="eventType">Task(Open)
+                            </div>
+                            <strong> <small>{{task.opportunity_name}} </small> </strong> <small><a>({{task.accountName}})</a></small>
+                        </div>
+                    <div class="sub_content">
+                        <div class="upc_sub">{{task.subject}}</div>
+                        <div class="upc_even">{{task.dueDate |date}}</div>
+                    </div>
+          </div>
+
+          <!-- Closed Activities ... -->
+          <div class="titCloseActivity">Close Activity</div> 
+          <!-- Closed Events -->
+      <div class="Upcoming" *ngFor = "let tdy of ClosedEvent">
+            <div class="upc_title">
+                  <div class="upc_img">
+                    <ion-icon name = "contact"></ion-icon>
+                  </div>
+                  <div class="eventType">Event(Closed)
+                  </div>
+                  <strong> <small>{{tdy.opportunity_name}} </small> </strong> <small><a>({{tdy.accountName}})</a></small>
+            </div>
+      <div class="sub_content">
+            <div class="upc_sub"><strong>{{tdy.subject}}</strong></div>
+            <div class="upc_even">{{tdy.event_start |date}}</div>
+              <div class="upc_dsc">{{tdy.event_disc}}</div>
+      </div>
+    </div>
+
+          <!-- Closed Task -->
+          <div class="Upcoming" *ngFor = "let task of ClosedTask">
+            <div class="upc_title">
+                  <div class="upc_img">
+                    <ion-icon name = "contact"></ion-icon>
+                  </div>
+                  <div class="eventType">Task(Closed)
+                </div>
+                <strong> <small>{{task.opportunity_name}} </small> </strong> <small><a>({{task.accountName}})</a></small>
+            </div>
+        <div class="sub_content">
+            <div class="upc_sub">{{task.subject}}</div>
+            <div class="upc_even">{{task.dueDate |date}}</div>
+        </div>
+</div>
+            <!-- Calls -->
+            <div class="Upcoming" *ngFor = "let calls of Call_ResponsData">
+                      <div class="upc_title">
+                            <div class="upc_img">
+                              <ion-icon name = "contact"></ion-icon>
+                            </div>
+                            <div class="eventType">Calls(Closed)
+                          </div>
+                            <strong>{{calls.receiver_id}}</strong>
+                      </div>
+                    <div class="sub_content">
+
+                      <div class="upc_sub">
+                        <ion-icon name = "call"></ion-icon> {{calls.calltype}} <a>{{calls.receiver_no}}</a>
+                      </div><br>
+                      <div class="upc_even">{{calls.callDate}}</div>
+
+                    </div>
+                      
+            </div>
+
+          <!-- Dispaly Emails -->
+          <!-- <div class="Upcoming" *ngFor = "let mail of Mail_ResponsData">
+              <div>
+                    <div class="upc_title">
+                          <div class="upc_img">
+                            <ion-icon name = "contact"></ion-icon>
+                          </div>
+                          <div class="eventType">Emails(Closed)
+                        </div>
+                          <strong>{{mail.Resciver_id}}</strong>
+                    </div>
+
+                  <div class="sub_content">
+                      <div class="upc_sub">
+                          <ion-icon name = "mail"></ion-icon> 
+                          <a>{{mail.Resciver_email}}</a> 
+                     </div>
+                    <div>{{mail.email}}</div><br>
+                    <div class="upc_even">{{mail.sendDate}}</div>
+                  </div>
+        </div>
+          </div> -->
+
+    </ion-content>
+<ion-footer>
+    <div class="call_ftr">
+      <ion-navbar>
+        <div class="row">
+          <div (click)= "DispalyToday(UserSession)" class="col col-sm-1">
+            <small>Today </small>
+          </div>
+          <div (click) = "DispalyUpcoming(UserSession)" class="col col-sm-1">
+            <small>Upcoming</small>
+          </div>
+      </div>
+      </ion-navbar>
+    </div>
+</ion-footer>

@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-navbar>
+         <input type="text" placeholder=" Search" spellcheck="off" autocapitalize = "off" class="form-control Mapsearch" #search>
+    </ion-navbar>
+</ion-header>
+<!-- (change)="showVal()"  -->
+<ion-content> 
+    <div class="map" id="map">
+            <div class="MapRessul">
+                <div (click)="PopPicker()" class="col col-sm-12"> <strong>Set this location</strong>
+                    <div class="spiner" *ngIf = "spiner">
+                        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                    </div>
+                    <hr>
+                    <small>
+                       {{mpfare}} {{mpsubfare}} {{mpsubLocality}} {{mpPlocality}} {{mpArea}} {{mpPostCode}} {{this.mpName}} 
+                    </small>
+                </div>
+            </div> 
+            <br>
+    </div>
+</ion-content>

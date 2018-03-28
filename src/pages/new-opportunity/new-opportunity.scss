@@ -1,0 +1,48 @@
+page-new-opportunity {
+	.NewOppo{
+		margin: 5px;
+	}
+	.oppoLst{
+		div{
+			padding: 8px;
+			border:1px solid lightgray;
+		}
+		samp{
+			float: right;
+		}
+	}
+	.ff {
+		background-color: white;
+		padding-left: 2%;
+		h6{
+			color: red;
+			display: inline;
+		}
+		a{
+			float: right;
+			margin-right: 15%;
+		}
+}
+
+.CurrentStage{
+	height: auto;
+	width: 100%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 5%;
+}
+.PreviuosStage{
+	margin-bottom: 20px;
+}
+.PreviuosStage{
+	height: auto;
+	width: 100%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 5%;
+}
+.previousStages .dv11{
+	margin: 20px;
+	text-align: center;
+}
+}

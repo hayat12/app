@@ -1,0 +1,37 @@
+<ion-content>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js"></script>
+    
+    <div class="lert">
+
+      <ion-card>
+        <h1>Register</h1>
+            <form (ngSubmit) ="SignUp(fm.value)" #fm = "ngForm">
+                  <ion-item>
+                      <input type="text" name="name" class="form-control" placeholder="Name" required ngModel>
+                  </ion-item>
+                  <ion-item>
+                      <input type="text"name="email" class="form-control" placeholder="email" required ngModel>
+                  </ion-item>
+                  
+                  <ion-item>
+                      <input type="text" name="username" class="form-control" placeholder="Username" required ngModel>
+                  </ion-item>
+                        
+                  <ion-item>
+                      <input type="password" name="password" class="form-control" placeholder="Password"   required ngModel>
+                  </ion-item>
+                        
+                  <ion-item>
+                      <input type="password" name="conPassword" class="form-control" placeholder="Confirm Password" required ngModel>
+                  </ion-item>
+                  
+                  <ion-item>
+                      <button ion-button full type="submit" class="btn btn-danger" [disabled] = "!fm.valid"> Register </button>
+                  </ion-item>
+            </form>
+      </ion-card>
+    </div>
+</ion-content>

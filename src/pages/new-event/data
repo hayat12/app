@@ -1,0 +1,157 @@
+import { Component, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+import { Geolocation, Geoposition } from '@ionic-native/geolocation';
+import { MapsAPILoader } from '@agm/core';
+import { } from '@types/googlemaps';
+import {
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsEvent,
+  GoogleMapOptions,
+  CameraPosition,
+  MarkerOptions,
+  Marker
+ } from '@ionic-native/google-maps';
+@IonicPage()
+@Component({
+  selector: 'page-new-event',
+  templateUrl: 'new-event.html',
+})
+export class NewEventPage {
+  map: any;
+  markers: any;
+  autocomplete = {input: '' };
+  GoogleAutocomplete: any;
+  GooglePlaces: any;
+  geocoder: any
+  autocompleteItems: any;
+  loading: any;
+
+  @ViewChild('search') public searchElement: ElementRef;
+
+  constructor(
+    public navCtrl          : NavController,
+    private nativeGeocoder	: NativeGeocoder,
+    private ngZone          : NgZone,
+    private geolocation		  : Geolocation,
+    private googleMaps      : GoogleMaps,
+    private mapsAPILoader	  : MapsAPILoader,
+    public navParams        : NavParams) {
+  }
+  ionViewDidLoad() {
+
+  }
+
+
+
+  
+
+  // ionViewDidLoad() {
+
+    // +++++++++++++++++++ Maps Code +++++++++++++++
+    // this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
+    // this.autocomplete = {input: '' };
+    // this.autocompleteItems = [];
+    // this.map = new google.maps.Map(document.getElementById('map'), {
+    //   center: { lat: -34.9011, lng: -56.1645 },
+    //   zoom: 15
+    // });    
+  //  }
+//  ++++++++++++ Google Maps Code ++++++++++++++++++
+
+  //  updateSearchResults(){
+  //   if (this.autocomplete.input == '') {
+  //     this.autocompleteItems = [];
+  //     return;
+  //   }
+  //   this.GoogleAutocomplete.getPlacePredictions({ input: this.autocomplete.input },
+  //   (predictions, status) => {
+  //     this.autocompleteItems = [];
+  //     this.ngZone.run(() => {
+  //       predictions.forEach((prediction) => {
+  //         this.autocompleteItems.push(prediction);
+  //       });
+  //     });
+  //   });
+  // }
+
+  // //  ngOnInit(){
+  // //   this.mapsAPILoader.load().then(
+  // //     ()=>{
+  // //       let autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement, {types:['geocode']});
+  // //       autocomplete.addListener('place_changed', ()=>{
+  // //         this.ngZone.run(()=>{
+  // //           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+  // //           if(place.geometry === undefined || place.geometry === null){
+  // //             return;
+  // //           }
+  // //         })
+  // //       })
+  // //     }
+  // //   ).catch((err)=>{
+  // //     console.log(err);
+  // //   });
+  // // }
+
+
+  // selectSearchResult(item){
+  //   this.clearMarkers();
+  //   this.autocompleteItems = [];
+  //   this.geocoder.geocode({'placeId': item.place_id}, (results, status) => {
+  //     if(status === 'OK' && results[0]){
+  //       let position = {
+  //           lat: results[0].geometry.location.lat,
+  //           lng: results[0].geometry.location.lng
+  //       };
+  //       let marker = new google.maps.Marker({
+  //         position: results[0].geometry.location,
+  //         map: this.map,
+  //       });
+  //       this.markers.push(marker);
+  //       this.map.setCenter(results[0].geometry.location);
+  //     }
+  //   })
+  // }
+  // tryGeolocation(){
+  //   this.clearMarkers();
+  //   this.geolocation.getCurrentPosition().then((resp) => {
+  //     let pos = {
+  //       lat: resp.coords.latitude,
+  //       lng: resp.coords.longitude
+  //     };
+  //     let marker = new google.maps.Marker({
+  //       position: pos,
+  //       map: this.map,
+  //       title: 'I am here!'
+  //     });
+  //     this.markers.push(marker);
+  //     this.map.setCenter(pos);
+  //   }).catch((error) => {
+  //     console.log('Error getting location', error);
+  //   });
+  // }
+
+  // clearMarkers(){
+  //   for (var i = 0; i < this.markers.length; i++) {
+  //     console.log(this.markers[i])
+  //     this.markers[i].setMap(null);
+  //   }
+  //   this.markers = [];
+  // }
+
+}
+
+
+
+<!-- <ion-toolbar color="primary">
+      <input type="text" name="PickUpAddress" class="form-control" placeholder="Pick Up Address" #search>
+      <ion-searchbar [(ngModel)]="autocomplete.inputs" (ionInput)="updateSearchResults()" placeholder="Search for a place"></ion-searchbar>
+      </ion-toolbar>
+      [hidden]="autocompleteItems.length == 0"
+      <ion-list>
+          <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+            {{autocompleteItems}}
+          </ion-item>
+      </ion-list>
+    <div id='map'></div> -->

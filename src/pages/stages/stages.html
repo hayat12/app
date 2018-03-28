@@ -1,0 +1,83 @@
+<ion-header>
+  	<ion-navbar color = danger>
+	  <ion-title> {{StageName}}</ion-title>
+      
+	  <ion-buttons end color = btnscolor>
+			<button (click)="ManageOpportunityStage(v)" ion-button icon-only color="royal">
+				<i id="fabtn" class="fa fa-plus-circle" aria-hidden="true"></i>
+			</button>
+    </ion-buttons>
+  </ion-navbar>
+  </ion-header> 
+<ion-content padding>
+	<div>
+			<div> 
+				<table class="table">
+					<tr>
+						<th><small>Expected Closing Date</small></th>
+						<td>{{ExpectcloseDate}}</td>
+					</tr>
+					<tr>
+						<th><small>Probablitity of closing the stage</small> </th>
+						<td>{{ProbalityOfClosing}}</td>
+					</tr>
+					<tr>
+						<th><small>Amount/Number of Delivry</small></th>
+						<td>{{AmountDelivery}}</td>
+					</tr>
+				</table>
+
+				<div *ngIf = "EventDiv" class="CurrentStage">
+            <small>Events </small>
+            
+          <div class="events" *ngFor = "let event of EeventsResponse">
+              <span class="ManageMyEvent" (click) = "ManageMyEvent(event)">
+                  <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </span>
+
+              {{event.subject}}
+              <div>{{event.event_disc}}</div>
+              <div>
+                Start     <span>{{event.event_start|date}}</span>
+              </div>
+              <div>
+                  End <span>{{event.event_end|date}}</span>
+              </div>
+
+              <div>
+                Location <span>{{event.location}}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf = "TaskDiv" class="CurrentStage">
+            <small>Task</small>
+        <div class="events" *ngFor = "let task of TaskResponse">
+            <span class="ManageMyTask" (click)="ManageMyTastk(task)">
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </span>
+            <div>
+                {{task.subject}}
+            </div>
+            <div>
+                Due date  <span>{{task.dueDate|date}}</span>
+            </div>
+        </div>
+				</div>
+		</div>
+	</div>
+</ion-content>
+
+<ion-footer>
+    <ion-navbar>
+        <div class="row">
+            <div (click) = "getEvents()" class="col col-sm-1">
+              <small>Events</small>
+            </div>
+            <div (click) = "getTask()" class="col col-sm-1">
+              <small>Tasks</small>
+            </div>
+        </div>
+    </ion-navbar>
+</ion-footer>
+

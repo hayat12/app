@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar color= danger>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Contact Person </ion-title>
+
+      <ion-buttons end color = btnscolor>
+          <samp *ngFor = "let DpM of mycontact">
+                <button (click)="ManageContactP(DpM)" ion-button icon-only color="royal">
+                    <i style="color:white; margin-right: 10px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+          </samp>
+    </ion-buttons>
+  </ion-navbar>  
+</ion-header>
+    <ion-content padding>
+
+        <div *ngIf = "!Mails" class="ContactDetails">
+          <div *ngFor = "let DpM of mycontact">
+
+            <table class="table table-hover">
+                <tr>
+                    <td> <strong>Name</strong>
+                        <br>{{DpM.name}}
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td> <strong>Account Name</strong>
+                        <br> {{DpM.accountName}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Title</strong>
+                        <br>{{DpM.title}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Department</strong>
+                        <br>{{DpM.department}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Email</strong>
+                        <br><a (click)="MailsFc(DpM)">{{DpM.email}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Phone No</strong>
+                        <br> <a (click) = "PhoneCall(cpM)" href="tel:{{DpM.phone}}">{{DpM.phone}}</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Mobile</strong> 
+                        <br><a href="tel:{{DpM.mobile}}">{{DpM.mobile}}</a>
+                    </td>
+                </tr> 
+                <tr>
+                    <td (click) = "OpenMyLocation(DpM)">
+                        <strong>Address</strong>
+                        <br>
+                                <!-- {{mpsubfare}} {{mpfare}} {{mpsubLocality}} {{mpPlocality}}
+                                {{mpPostCode}} {{mpArea}} {{mpsubArea}}
+                                {{mpName}}  -->
+                                
+                                {{DpM.address}}
+                        <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </table>
+          </div>
+        </div>
+
+        <div *ngIf = "!ContactDetails" class="Mails">
+           <div *ngFor = "let MpM of mycontact">
+                <form (ngSubmit) = "SendMail(form.value,{myMail:MpM})" #form = "ngForm">
+
+                  <samp>From *</samp>
+                    <input class="form-control" type="email" required name="sender_Email" [(ngModel)] = "sender_Email" placeholder="From "><br>
+
+                    <samp>To *</samp>
+                    <input class="form-control" required type="email" name="receiver_Email" [(ngModel)] = "receiver_Email" placeholder="To"><br>
+
+                    <samp>cc</samp>
+                    <!-- <input class="form-control" type="email" name="cc" ngModel placeholder="cc"><br> -->
+
+                    <samp>Your Message</samp>
+                    <textarea required rows="7" class="form-control" name="Mail" ngModel placeholder="Your Message ..."></textarea><br>
+
+                    <button style="width: 100%" class="btn btn-danger" [disabled] = "!form.valid">Send 
+                        <ion-icon name= "send"></ion-icon>
+                    </button>
+                </form>
+          </div>
+        </div>
+
+    </ion-content>

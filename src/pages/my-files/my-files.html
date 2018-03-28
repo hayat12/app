@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar color=danger>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Files</ion-title>
+
+        <ion-buttons end>
+            <button (click)="manageMyFile()" ion-button icon-only color="royal">
+                <i style="color:white; margin-right: 10px;font-size: 18px" class="fa fa-plus-circle" aria-hidden="true"></i>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <!-- <table class="table table-responsive">
+        <tr>
+            <th style="max-width: 50px">File Name</th>
+            <th>Date </th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let file of filesResonse">
+            <td style="word-break: break-all" (click)="OpenMyFile(file)"></td>
+            <td></td>
+            <td (click)="manageFile(file)">
+                <i style="color:red" class="fa fa-trash-o" aria-hidden="true"></i>
+            </td>
+        </tr>
+    </table> -->
+
+    <div class="file-list" *ngFor="let file of filesResonse">
+        <div (click)="OpenMyFile(file)">
+            <div class="file-icon">
+                <ion-icon ios="ios-folder" md="md-folder"></ion-icon>
+            </div>
+            <div class="file-name">
+                {{file.orgfilename}}
+            </div>
+        </div>
+        <br><br>
+        <div class="file-size">
+            {{file.dateOfPost |date}}
+        </div>
+        <div class="file-time" (click)="manageFile(file)">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        </div>
+    </div>
+
+</ion-content>

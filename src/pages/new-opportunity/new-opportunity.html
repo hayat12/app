@@ -1,0 +1,130 @@
+  <ion-header>
+  	<ion-navbar color = danger>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+	  <ion-title> {{Title}}</ion-title>
+	  
+	  <ion-buttons end color = btnscolor *ngIf = "OppotDetails">
+			<button (click)="ManageOpportunity(v)" ion-button icon-only color="royal">
+				<i style="color:white; margin-right: 10px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+			</button>
+	  </ion-buttons>
+  </ion-navbar>
+  </ion-header>
+  
+
+<ion-content padding>
+		<div class="NewOppo" *ngIf = "!OppotDetails && !OppotFooter">
+			
+				<form (ngSubmit) ="addReconds(f.value)" #f = "ngForm">
+				<h6 tabBadge="14">Opportunity Name</h6>
+					<input type="text" name="OpportunityName" class="form-control" placeholder="Opportunity Name" required [(ngModel)]="OpportunityName">
+
+					<h6>Account Name </h6>
+					<select class="form-control" name="AccountName" required [(ngModel)]="AccountName" (ngModelChange)="getthisValue($event)">
+						<option *ngFor = "let acount of AccountId" [value]="acount.account_id">{{acount.accountName}}</option> 
+					</select>
+
+					<h6>Contact Person</h6>
+					<select name="contactPerson" class="form-control" required [(ngModel)]="contactPerson">
+						<option *ngFor = "let contact of Contactid" [value]="contact.contact_ID">{{contact.name}}</option>
+					</select>
+
+					<h6>Expected Close Date</h6>
+					<input type="date" name="ExpectCloseDate" class="form-control" required [(ngModel)]="ExpectCloseDate">
+
+					<h6>Opportunity Stage</h6>
+					<select name="OpportunityStage" class="form-control" required [(ngModel)]="OpportunityStage">
+						<option value="Qualification">Qualification </option>
+						<option value="NeedAnalysis">Need Analysis </option>
+						<option value="Proposal">Proposal </option>
+						<option value="Negotiation">Negotiation </option>
+						<option value="Close">Closed </option>
+					</select>
+
+					<h6>Probablity of closing the Stage</h6>
+					<input placeholder="(1-100)%" type="number" max="100" min="1" name="ProbablityOfClosing" class="form-control" required [(ngModel)]="ProbablityOfClosing">
+
+					<h6>Amount/Number of Delivery </h6>
+					<input min="0" type="number" name="AmountOfDelivery" class="form-control" placeholder=" Amount/Number of Delivery " required [(ngModel)]= "AmountOfDelivery">
+					<!-- autocumpalte for Opportunity if needed
+					<input type="text" name="Address" class="form-control" placeholder="Address" required [(ngModel)]="Address" #search>					   -->
+					<br>
+					<button ion-button full type="submit" class="btn btn-danger" [disabled] = "!f.valid"> {{btnTitle}}</button>
+				</form>
+		</div>
+
+	<div *ngIf = "!NewOppo">
+
+			<div *ngFor = "let oppo of orgData">
+				<table class="table table-hover">
+					<tr>
+						<th><small>Opportunity Name</small></th>
+						<td>{{oppo.opportunity_name}}</td>
+					</tr>
+					<tr>
+						<th><small>Account Name</small></th>
+						<td>{{oppo.accountName}}</td>
+					</tr>
+					<tr>
+						<th><small>Contact Person Name</small></th>
+						<td>{{oppo.name}}</td>
+					</tr>
+				</table>
+
+				<div class="CurrentStage" (click)= "RespectiveCurrentStage(oppo)">
+						<small>Current Stage <a>{{oppo.opportunity_stage}}</a></small>
+					<table class="table">
+						<tr>
+							<td>Expected close date</td>
+							<td>{{oppo.expected_close_date}}</td>
+						</tr>
+						<tr>
+							<td>Probality of closing the sale</td>
+							<td>{{oppo.probality_close_sale}}</td>
+						</tr>
+						<tr>
+							<td>Amount of delivery</td>
+							<td>{{oppo.No_of_delivery}}</td>
+						</tr>
+						<tr>
+							<td>Number of task</td>
+							<td>{{CurrentTaskNo}}</td>
+						</tr>
+						<tr>
+							<td>Number of events</td>
+							<td>{{CurrentEventNo}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			 <small class="previousStages"> <div class="dv11">Previous Stages</div> <div class="dv12"></div> </small>
+				<div class="PreviuosStage" *ngFor = "let per_oppo of PerivousStage" (click)= "RespectivePreviousStage(per_oppo)">
+						<!--  -->
+						<small>Previous Stage <a>{{per_oppo.StageType}}</a></small>
+						<!-- <table class="table">
+								<tr>
+										<td>Expected close date</td>
+										<td>{{per_oppo.expected_close_date}}</td>
+									</tr>
+									<tr>
+										<td>Probality of closing the sale</td>
+										<td>{{per_oppo.probality_close_sale}}</td>
+									</tr>
+									<tr>
+										<td>Amount of delivery</td>
+										<td>{{per_oppo.no_of_deliviry}}</td>
+									</tr>
+									<tr>
+										<td>Number of task</td>
+										<td>{{PerviousTaskNo}}</td>
+									</tr>
+									<tr>
+										<td>Number of events</td>
+										<td>{{PerviousEventNo}}</td>
+									</tr>
+						</table>	 -->
+			</div>
+		</div>
+</ion-content>

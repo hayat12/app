@@ -1,5 +1,8 @@
 {
   "name": "NizTheWiz",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "1132430",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

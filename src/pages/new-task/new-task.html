@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color = danger>
+        <ion-title>New Task</ion-title>
+        <ion-buttons end>
+            <button (click)="ManageTask()" ion-button icon-only color="royal">
+                    <i style="color:white; margin-right: 10px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <div class="events">
+            <div>
+                <h5 style="text-align: center">{{Subject}}</h5>
+            </div>
+            <div>
+                Due Date <span>{{DueDate|date}}</span>
+            </div>
+        </div>
+
+</ion-content>

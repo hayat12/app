@@ -1,0 +1,73 @@
+page-activity {
+
+	.Upcoming{
+		// padding: 5px 5px 3px 10px;
+		padding: 2%;
+		background-color: white;
+		// box-shadow: 0px 0px 0.1px 0px;
+		border-bottom: 1px solid lightgray;
+	.upc_title{
+		padding: 5px;
+		background-color:  rgba(224, 217, 217, 0.84);
+		color: black;
+		border-radius: 2px;
+		.upc_img{
+			color: #1972BB;
+			font-size: 22px;
+			display: inline;
+		}
+		.eventType{
+			float: right;
+			font-size: 12px;
+			.eventTypeDay{
+				display: inline;
+				font-size: 12px;
+				color: darkgray;	
+			}
+		}
+	}
+	.sub_content{
+		margin: 10px;
+	} 
+  	.upc_sub{
+  		color: black;
+  	}
+	.upc_even{
+		font-size: 10px;
+		float: right;
+		margin-top: -15px;
+		color: darkgray;
+	}
+ 	.upc_dsc{
+ 		text-align: justify;
+ 		color: black;
+ 	}
+ }
+
+ .call_ftr {
+		.btn{
+			background-color: white;
+			border:none;
+			border-radius: 0px;
+			width: 49%;
+		}
+	}
+
+	.titOpenActivity{
+		padding: 3%;
+		margin: 5px;
+		background-color:  rgba(243, 237, 237, 0.84);
+	}
+	.titCloseActivity{
+		padding: 3%;
+		margin: 5px;
+		background-color:  rgba(243, 237, 237, 0.84);
+	}
+
+	.footer .col{
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+    }
+
+}

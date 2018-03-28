@@ -1,0 +1,48 @@
+<ion-header>
+        <ion-navbar color = danger>
+      <ion-title>Change Stage</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="NextStage" *ngIf = "NextStage">
+        <form (ngSubmit) ="MoveNextStage(fm.value)" #fm = "ngForm">
+            <select class ="form-control" name="nextStages" id="stage" [(ngModel)] = "opportunityStage">
+                    <option value="Qualification">Qualification </option>
+                    <option value="NeedAnalysis">Need Analysis </option>
+                    <option value="Proposal">Proposal </option>
+                    <option value="Negotiation">Negotiation </option>
+                    <option value="Close">Closed </option>
+            </select>
+          <button ion-button full type="submit" class="btn btn-danger" [disabled] = "!fm.valid">Save </button>
+        </form>
+    </div>
+        <div class="CloseOpportunity" *ngIf = "CloseOpportunity">
+            <h3> <small>{{opportunityStage}}</small> </h3>
+            <form (ngSubmit) ="CloseOppo(f.value,{close:oppo})" #f = "ngForm">
+                  <div class="ff" >
+                      <h6>Select (*)</h6>
+                      <label>Win: </label><input  (click) = "Winbtn()" type="radio" value="Win" name="OpportunityName" required ngModel>
+                      <label>Lose: </label><input (click) = "Losebtn()" type="radio" value="Lose" name="OpportunityName" required ngModel>
+                      <br>
+                      <textarea *ngIf = "comment" name="OpportunityComment" required ngModel class ="form-control"></textarea>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn" color = danger [disabled] = "!f.valid"> Close Opportunity </button>
+            </form>
+        </div>
+</ion-content>
+
+<!-- <ion-footer>
+        <ion-navbar>
+            <div class="row">
+                <div (click) = "MoveToNextStage()" class="col col-sm-1">
+                  <small>Next Stage </small>
+                </div>
+                <div (click) = "CloseThisOppo()" class="col col-sm-1">
+                  <small>Close Opportunity</small>
+                </div>
+            </div>
+        </ion-navbar>
+    </ion-footer> -->

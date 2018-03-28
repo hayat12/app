@@ -1,0 +1,54 @@
+<ion-header>
+	<ion-navbar color = danger>
+      	<button ion-button menuToggle>
+          	<ion-icon name="menu"></ion-icon>
+      	</button>
+      	<ion-title>{{pTitle}}</ion-title>
+ 	</ion-navbar>
+</ion-header>
+
+	<ion-content padding>
+
+	<div class="CreatEvent" *ngIf = "CreatEvent">
+
+	<form (ngSubmit) ="CreatNewEvent(fm.value)" #fm = "ngForm">
+					<!-- <h4 style="text-align: center"> {{AccountName}} </h4> -->
+					<h6>Subject</h6>
+		  			<input type="text" name="Subject" class="form-control" placeholder="Subject" required [(ngModel)] = 'Subject'>
+
+		  			<h6>Description </h6>
+		  			<textarea name="Description" class="form-control" placeholder="Description" required [(ngModel)] = 'Description'></textarea>
+
+		  			<h6>Start Event</h6>
+		  			<input type="date" name="StartEvent" class="form-control" required [(ngModel)] = 'StartEvent'>
+
+		  			<h6>End Event</h6>
+		  			<input type="date" name="EndEvent" class="form-control" required [(ngModel)] = 'EndEvent'>
+
+		  			<h6>Location </h6>
+		  			<input type="text" name="Location" class="form-control" placeholder="Location" required [(ngModel)] = 'Location'>
+
+		  			<!-- <h6>Contact Person </h6> <small>{{contactPersonName}}</small> -->
+					  <input hidden disabled type="text" name="contactPersonid" class="form-control" placeholder="Contact Person" required [(ngModel)]="contactPersonid">
+			
+		  			<button ion-button full type="submit" class="btn btn-danger" [disabled] = "!fm.valid"> Save </button>
+		  	</form>
+	</div>
+
+	<div class="CreatTask" *ngIf = "CreatTask">
+		<!-- <h4 style="text-align: center"> {{AccountName}} </h4> -->
+		<form (ngSubmit) ="CreatNewTask(fm.value)" #fm = "ngForm">
+
+					<h6>Subject</h6>
+		  			<input type="text" name="Subject_tsk" class="form-control" placeholder="Subject" required [(ngModel)] = "Subject_tsk">
+
+		  			<h6>Due Date </h6>
+		  			<input type="date" name="DueDate_tsk" class="form-control" placeholder="Due Date" required [(ngModel)] = "DueDate_tsk">
+
+		  			<!-- <h6>Contact Person</h6><small>{{contactPersonName}}</small> -->
+		  			<input hidden disabled type="text" name="contactPersonid" class="form-control" required [(ngModel)]="ContactPerson_tsk"><br>
+						
+		  			<button ion-button full type="submit" class="btn btn-danger" [disabled] = "!fm.valid"> Save </button>
+		  	</form>
+	</div>
+	</ion-content>

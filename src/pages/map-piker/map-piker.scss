@@ -1,0 +1,58 @@
+page-map-piker {
+    margin: 0px;
+    padding: 0px;
+    #map{
+        position: relative;
+        padding: 0px;
+        width: 100%;
+        height:100%;
+    }
+    .MapRessul{
+        overflow: hidden;
+        margin: 120%  5% 0% 5%;
+        hr{
+            background-color: rgba(27, 26, 26, 0.863);
+        }
+    }
+    .col{
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(237, 238, 238, 0.911);
+    }
+    .spiner .fa{
+        float: right;
+        font-size: 22px;
+        color: rgb(127, 127, 238);
+        margin-top: -20px;
+    }
+    .fa-map-pin{
+        font-size: 26px;
+        color: red;
+        position: absolute;
+        margin-top: 60%;
+        margin-left: 50%;
+    }
+    .fa-dot-circle-o{
+        position: absolute;
+        margin-top: -60px;
+        margin-left: 16px;
+        font-size: 28px;
+        color: rgba(170, 29, 29, 0.959);
+    }
+    .Mapsearch{
+        margin: 0px;
+        margin-left: -40px;
+        margin-top: 25px;
+        width: 110%;
+    }
+    .back-button{
+        margin: 0px;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+    .navbar{
+        padding: 0px;
+        margin: 0px;
+    }
+}

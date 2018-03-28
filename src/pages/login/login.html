@@ -1,0 +1,30 @@
+	<!-- <ion-header>
+		<ion-navbar>
+			<ion-title style=" background-color:rgb(78, 161, 230); ;font-size: 12px;">	 </ion-title>
+		</ion-navbar>
+	</ion-header> -->
+		<ion-content class="contant" padding>
+				<br><br>
+			<div>
+				<img class="logImg" src="http://www.nizthewiz.com/booking/img/graphic/mascot.png">
+			</div>
+			<br><br>
+			<strong>
+				<p style="text-align: center"> Login </p>
+		</strong>
+			<br>
+			<form (ngSubmit) ="Login(flog.value)" #flog = "ngForm">
+					<ion-label>Email</ion-label>
+					<input type="email" name="username" [(ngModel)] = "username" required placeholder="Email ">
+					
+					<ion-label>Password</ion-label>
+					<input type="password" name="password" [(ngModel)] = "password" required placeholder="Password ">
+					<br><br>
+					<button ion-button full color = gmail [disabled] = "!flog.valid">Sign in</button>
+			</form>
+			<br>
+			<samp (click)="ForgotPass()">
+				<a>Forgot Password</a>
+			</samp>
+		</ion-content>>
+  

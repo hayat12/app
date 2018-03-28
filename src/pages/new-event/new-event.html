@@ -1,0 +1,31 @@
+<ion-header>
+  	<ion-navbar color = danger>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+	  <ion-title>Event</ion-title>
+      <ion-buttons end>
+          <button (click)="ManageEvent()" ion-button icon-only color="royal">
+                <i style="color:white; margin-right: 10px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+        <div class="events">
+            <div>
+                <h5 style="text-align: center">{{subject}}</h5>
+            </div>
+            <div>{{event_disc}}</div>
+            <div>
+                Start <span>{{event_start|date}}</span>
+            </div>
+            <div>
+                End <span>{{event_end|date}}</span>
+            </div>
+            <div>
+                Location <span>{{location}}</span>
+            </div>
+        </div>
+</ion-content>

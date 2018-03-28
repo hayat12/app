@@ -1,0 +1,51 @@
+<ion-header>
+	<ion-navbar color= danger>
+		<ion-title>
+			{{pgTitle}}
+		</ion-title>
+	</ion-navbar>  
+</ion-header>
+  <ion-content padding>
+			<form (ngSubmit) ="AddNewAccount(f.value)" #f = "ngForm">
+		  			<h6>Account Name </h6>
+		  			<input type="text" name="AccountName" class="form-control" placeholder="Account Name" required [(ngModel)]="AccountName">	  
+					  <h6>Contact Person </h6>
+					  <input type="text" name="ContanctPerson" placeholder="Contact Person" class="form-control" [(ngModel)]="ContanctPerson">
+					<!-- <select >
+							<option *ngFor = "let contact of ResponsData" [value]="contact.contact_ID">{{contact.name}}</option>
+					</select> -->
+
+		  			<h6>Contact No </h6>
+		  			<input type="text" name="ContanctNO" class="form-control" placeholder="Contact No" required [(ngModel)]="ContanctNO">
+
+		  			<h6>Website </h6>
+		  			<input type="text" name="Website" class="form-control" placeholder="Website" [(ngModel)]="Website">
+
+		  			<h6>Industry </h6>
+		  			<input type="text" name="Industry" class="form-control" placeholder="Industry" required [(ngModel)]="Industry">
+
+		  			<h6>Description </h6>
+		  			<textarea name="Description" class="form-control" placeholder="Description" [(ngModel)]="Description"> </textarea> 
+					  
+					<h6>No of employee </h6>
+					<input type="number" min="0" name="EmployeeNo" class="form-control" placeholder="No of employee" [(ngModel)]="EmployeeNo">
+					  
+					<h6>Corporate Address    <a id="mapPin" (click) = "SetMyLocation()"><ion-icon ios="ios-pin" md="md-pin"></ion-icon></a> </h6> 
+					<input placeholder="Corporate Address" type="text" name="CorporateAddress" id="CorporateAddress" class="form-control" [(ngModel)]="CorporateAddress" > <!--  #CorpSearch!-->
+						<input id="myhidentext" type="hidden" placeholder="corlat" name="corlat" [(ngModel)] = "corlat">
+						<input id="myhidentext" type="hidden" placeholder="corlng" name="corlng" [(ngModel)] = "corlng">
+
+					<h6>Delivery/Pick Up Address  <a id="mapPin" (click) = "SetPickUpLocation()"> <ion-icon ios="ios-pin" md="md-pin"></ion-icon> </a> </h6>
+					  <input type="text" name="PickUpAddress" class="form-control" placeholder="Pick Up Address" [(ngModel)]="PickUpAddress" > 
+							<input id="myhidentext" type="hidden" type="hi" placeholder="picklat" name="picklat" [(ngModel)] = "picklat">
+							<input id="myhidentext" type="hidden" placeholder="picklng" name="picklng" [(ngModel)] = "picklng">
+							
+						<br>
+		  			<button ion-button full type="submit" class="btn btn-danger" [disabled] = "!f.valid"> {{btnTitle}}</button>
+			  </form>
+</ion-content> 
+
+
+
+ 
+

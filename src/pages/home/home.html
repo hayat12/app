@@ -1,18 +1,75 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+  <ion-header>
+  <ion-navbar color= danger>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+    <ion-content class="content">
+        <div class="tophome"> 
+            <div class="tb1">Open {{OpenNoOpportunity}} </div>
+            <div class="tb2">Close: {{ClosedNoOfOpportunity}} </div>
+            <div class="tb3">Goals: {{totalNoOfOpportunities}}</div>
+    </div>
+        <div class="Upcoming" *ngFor = "let even of Even_ResponsData">
+              <div>
+                    <div class="upc_title" (click) = "ToContatcP(even)">
+                      <div class="upc_img">
+                        <ion-icon name = "contact"></ion-icon>
+                      </div>
+                      <div class="eventType">Event <i class="fa fa-clock-o" aria-hidden="true"></i>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+                      </div>
+                      <strong> <small>{{even.opportunity_name}} </small> </strong> <small><a>({{even.accountName}})</a></small>
+                    </div>
+                    <div class="sub_content">
+                          <div class="upc_even">{{even.event_start |date}}</div>
+                          <div class="upc_sub"><strong>{{even.subject}}</strong></div>
+                          
+                          <div class="upc_dsc">{{even.event_disc}}</div>
+                    </div>
+                    
+              </div>
+      </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+       <div class="Upcoming" *ngFor = "let task of Task_ResponsData">
+              <div>
+                    <div class="upc_title"  (click) = "ToContatcP1(task)">
+                      <div class="upc_img">
+                        <ion-icon name = "contact"></ion-icon>
+                      </div>
+                      <div class="eventType">Task <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </div>
+                    <strong> <small>{{task.opportunity_name}} </small> </strong> <small><a>({{task.accountName}})</a></small>
+                    </div>
+                    <div class="sub_content">
+                        <div class="upc_even">{{task.dueDate |date}}</div>
+                         <div class="upc_sub">{{task.subject}}</div>
+                    </div>
+                    
+              </div>
+      </div>
+
+       <div class="Upcoming" *ngFor = "let Topoppo of ResponsData">
+              <div>
+                    <div class="upc_title">
+                      <div class="upc_img">
+                        <!-- <img src=""> --><ion-icon name = "contact"></ion-icon>
+                      </div>
+                      <div class="eventType">Task(Types)
+                        <div class="eventTypeDay">Upcoming (Status)</div>
+                    </div>
+                      <strong>{{Topoppo.contact_person}}</strong>
+                    </div>
+
+                    <div class="upc_sub">{{Topoppo.subject}}</div>
+                    <div class="upc_even">{{Topoppo.event_start}}</div>
+                    <div class="upc_dsc">{{Topoppo.event_disc}}</div>
+              <hr></div>
+      </div>
+      <ion-input type="text" placeholder="hello"></ion-input>
+    <br>
+    <br>
+  </ion-content>

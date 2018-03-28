@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-navbar color= danger>
+      <ion-title> Account Details </ion-title>
+
+      <ion-buttons end>
+          <button (click)="manageAccountOptions()" ion-button icon-only color="royal">
+              <i style="color:white; margin-right: 10px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="content" padding>
+    <div class="accountDetails">
+
+      <table class="table table-hover">
+          <tr>
+            <td> <ion-icon name="briefcase"></ion-icon> </td>
+            <td><strong>Account/ Company Name</strong>
+                <br>{{AccountName}}
+            </td>
+          </tr>
+          <tr>
+              <td> <ion-icon name="contact"></ion-icon> </td>
+              <td><strong>Contact Person</strong>
+                  <br>{{ContanctPerson}}
+              </td>
+            </tr>
+            <tr>
+                <td> <ion-icon name="call"></ion-icon> </td>
+                <td><strong>Contact No </strong>
+                    <br> <a href="tel:{{ContanctNO}}">{{ContanctNO}}</a>
+                </td>
+              </tr>
+              <tr>
+                  <td> <ion-icon name="globe"></ion-icon> </td>
+                  <td><strong>Website</strong> 
+                   <br> <a href="{{Website}}">{{Website}}</a>
+                  </td>
+                </tr>
+                <tr>
+                    <td> <ion-icon name="at"></ion-icon> </td>
+                    <td> <strong>Industry</strong> 
+                        <br> {{Industry}}
+                    </td>
+                  </tr>
+                  <tr>
+                      <td> <ion-icon name="book"></ion-icon> </td>
+                      <td> <strong>Description</strong> <br>
+                            {{Description}}
+                      </td>
+                    </tr>
+                    <tr>
+                        <td> <ion-icon name="contact"></ion-icon> </td>
+                        <td><strong>Number of Employee </strong>
+                            <br> {{EmployeeNo}}
+                        </td>
+                      </tr>
+                      <tr (click) = "MyCorLocation()">
+                            <td> <ion-icon name="navigate"></ion-icon> </td>
+                            <td><strong>Corporate Address</strong>
+                                <br>
+                                <!-- {{pickmpsubfare}} {{pickmpfare}} {{pickmpsubLocality}} {{pickmpPlocality}}
+                                {{pickmpPostCode}} {{pickmpArea}} {{pickmpsubArea}}
+                                {{pickmpName}}  -->
+                                        {{PickUpAddress}}
+                                <i class="fa fa-map-pin" aria-hidden="true"></i>
+                            </td>
+                        </tr>
+                      <tr (click) = "MyPickLocation()">
+                          <td> <ion-icon name="navigate"></ion-icon> </td>
+                          <td><strong>Delivery/ Pick Up Address </strong>
+                              <br>
+                              <!-- {{cormpsubfare}} {{cormpfare}} {{cormpsubLocality}} {{cormpPlocality}}
+                                {{cormpPostCode}} {{cormpArea}} {{cormpsubArea}}
+                                {{cormpName}}  -->
+                                    {{CorporateAddress}}
+                              <i class="fa fa-map-pin" aria-hidden="true"></i>
+                          </td>
+                      </tr>
+                      
+                      <tr>
+                        <td>  <ion-icon name="alert"></ion-icon></td>
+                        <td><strong>Opportunity Name </strong>
+                            <br> {{OpportunityName}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td> <ion-icon name="browsers"></ion-icon> </td>
+                        <td>
+                            <strong> Opportunity Stage </strong>
+                            <br> {{opportunityStage}}
+                        </td>
+                    </tr>
+      </table>
+      </div>
+</ion-content>

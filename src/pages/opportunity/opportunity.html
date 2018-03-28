@@ -1,0 +1,35 @@
+<ion-header>
+	 <ion-navbar color = danger>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+	  <ion-title>Opportunity</ion-title>
+	  
+	  <ion-buttons end color = btnscolor>
+			<button (click)="NewOpportunity({newoppo:'newoppo'})" ion-button icon-only color="royal">
+					<i style="color:white; margin-right: 10px;font-size: 18px" class="fa fa-plus-circle" aria-hidden="true"></i>
+			</button>
+	  </ion-buttons>
+	  
+  </ion-navbar>
+</ion-header>
+ 
+
+<ion-content class="content">
+
+	<ion-list class="oppolists">
+		<div class="oppoOpen">Open</div>
+		  <div (click) = "VeiwOppoDetails({veiewoppo:oppo},{oppoStatus:'open'})" class="openList" *ngFor = "let oppo of orgData">
+				<samp> <strong>{{oppo.opportunity_name}}</strong></samp>	<a>{{oppo.opportunity_stage}}</a>
+				<div><small>{{oppo.accountName}}</small></div>
+					<a><small>{{oppo.RecordDate}}</small></a>
+		  </div>
+		  <!-- if opportunity closed disable the close opportunity button -->
+		<div class="oppoClose">Closed</div>
+			<div (click) = "VeiwOppoDetails({veiewoppo:oppo},{oppoStatus:'close'})" class="closeList" *ngFor = "let oppo of ClosedResponsData">
+					<small>{{oppo.opportunity_name}}</small> <a><small>{{oppo.opportunity_stage}}</small></a>
+					<div><small>{{oppo.accountName}}</small></div>
+					<a><small>{{oppo.RecordDate}}</small></a>
+			</div>
+	</ion-list>
+	</ion-content>

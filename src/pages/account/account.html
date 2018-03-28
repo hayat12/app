@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-navbar color= danger>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Account</ion-title>
+		<ion-buttons end>
+                <button (click)="AddnewAcount()" ion-button icon-only color="royal">
+                        <i style="color:white; margin-right: 10px;" class="fa fa-plus-circle" aria-hidden="true"></i>
+                </button>
+            </ion-buttons>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+
+				<div *ngIf = "!accountDetails && !FooterBtn">
+					<div class="accountList" *ngFor = "let act of viewAccount">
+						<div (click) = "VeiwAccountDetails({a:act})">
+							<div>
+								<a>{{act.accountName}}</a>
+								<br>
+								<small>{{act.contact_person}}</small>
+								<div class="Ddate">{{act.createDate}}</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+</ion-content>
+
+<ion-footer *ngIf = "!accountList">
+	 <ion-navbar>
+	 <div *ngFor = "let act of viewAccount">
+	<div class="footer">
+		
+			<button class="btn" (click) = "DeleteItem({deleteItem: act})"> Delete</button>
+			<button class="btn" (click) = "EidtItem({editItem: act})"> Edit</button>
+	 </div>
+	</div>
+	 </ion-navbar>
+</ion-footer>
